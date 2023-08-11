@@ -2,7 +2,7 @@ const express = require('express');
 const labora = express.Router();
 const db = require('../db/conn');
 
-labora.post('/api/',(req, res)=>{
+labora.post('/api/usuario',(req, res)=>{
 
 
     let usuario = [

@@ -2,7 +2,7 @@ const express = require('express');
 const labora = express.Router();
 const db = require('../db/conn');
 
-labora.post('',(req, res)=>{
+labora.post('/api/Horario',(req, res)=>{
 
 
     let params =[
@@ -34,7 +34,7 @@ labora.post('',(req, res)=>{
 
 });
 
-labora.get('',(req, res)=>{
+labora.get('/api/Horario',(req, res)=>{
  
   let sql = "select * from horario";
 
@@ -48,7 +48,7 @@ labora.get('',(req, res)=>{
         });
 
 });
-labora.put('/:id', (req, res) => {
+labora.put('/api/Horario/:id', (req, res) => {
 
 
   const parametros = [
@@ -81,7 +81,7 @@ labora.put('/:id', (req, res) => {
 
 
 });
-labora.delete('/:id', (req, res) => {
+labora.delete('/api/Horario/:id', (req, res) => {
 
 
   let sql = ` update horario 

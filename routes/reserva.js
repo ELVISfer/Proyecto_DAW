@@ -2,7 +2,7 @@ const express = require('express');
 const labora = express.Router();
 const db = require('../db/conn');
 
-labora.post('',(req, res)=>{
+labora.post('/api/reserva',(req, res)=>{
 
 
     let reserva =[
@@ -36,7 +36,7 @@ labora.post('',(req, res)=>{
   
   });
   
-  labora.get('',(req, res)=>{
+  labora.get('/api/reserva',(req, res)=>{
    
     let sql = "select * from reserva";
   
@@ -51,7 +51,7 @@ labora.post('',(req, res)=>{
   
   });
   
-  labora.put('/:id', (req, res) => {
+  labora.put('/api/reserva/:id', (req, res) => {
   
   
     const parametros = [
@@ -83,7 +83,7 @@ labora.post('',(req, res)=>{
   
   
   });
-  labora.delete('/:id', (req, res) => {
+  labora.delete('/api/reserva/:id', (req, res) => {
   
   
     let sql = ` update reserva
