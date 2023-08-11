@@ -2,6 +2,7 @@ const express = require('express');
 const labora = express();
 labora.use(express.json());
 
+
 const rutausuario = require('./routes/usuario');
 labora.use('/api/usuario', rutausuario);
 
