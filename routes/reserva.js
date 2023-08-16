@@ -1,8 +1,8 @@
 const express = require('express');
-const labora = express.Router();
+const app = express.Router();
 const db = require('../db/conn');
 
-labora.post('/api/reserva',(req, res)=>{
+app.post('/api/reserva',(req, res)=>{
 
 
     let reserva =[
@@ -36,7 +36,7 @@ labora.post('/api/reserva',(req, res)=>{
   
   });
   
-  labora.get('/api/reserva',(req, res)=>{
+  app.get('/api/reserva',(req, res)=>{
    
     let sql = "select * from reserva";
   
@@ -51,7 +51,7 @@ labora.post('/api/reserva',(req, res)=>{
   
   });
   
-  labora.put('/api/reserva/:id', (req, res) => {
+app.put('/api/reserva/:id', (req, res) => {
   
   
     const parametros = [
@@ -83,7 +83,7 @@ labora.post('/api/reserva',(req, res)=>{
   
   
   });
-  labora.delete('/api/reserva/:id', (req, res) => {
+  app.delete('/api/reserva/:id', (req, res) => {
   
   
     let sql = ` update reserva
@@ -110,4 +110,4 @@ labora.post('/api/reserva',(req, res)=>{
   
   });
 
-  module.exports = labora;
+  module.exports = app;

@@ -1,8 +1,8 @@
 const express = require('express');
-const labora = express.Router();
+const app = express.Router();
 const db = require('../db/conn');
 
-labora.post('/api/usuario',(req, res)=>{
+app.post('/api/usuario',(req, res)=>{
 
 
     let usuario = [
@@ -39,7 +39,7 @@ labora.post('/api/usuario',(req, res)=>{
   });
   
   
-  labora.get('/api/usuario',(req, res)=>{
+app.get('/api/usuario',(req, res)=>{
     let sql = "select * from usuarios";
   
   
@@ -53,7 +53,7 @@ labora.post('/api/usuario',(req, res)=>{
   
   });
   
-  labora.put('/api/usuario/:id', (req, res) => {
+  app.put('/api/usuario/:id', (req, res) => {
   
   
     const parametros = [
@@ -83,7 +83,7 @@ labora.post('/api/usuario',(req, res)=>{
             res.json(error);
         });
   });
-  labora.delete('/api/usuario/:id', (req, res) => {
+  app.delete('/api/usuario/:id', (req, res) => {
   
   
     let sql = ` update usuarios
@@ -110,4 +110,4 @@ labora.post('/api/usuario',(req, res)=>{
   });
   
 
-module.exports = labora;
+module.exports = app;
